@@ -1,5 +1,5 @@
-# VUTTR API
-Este repositório contém uma simples API para o desafio de front-end.
+# API
+
 Requisitos:
 * NodeJS v5.2.0+
 
@@ -10,17 +10,16 @@ Faça o clone/download deste repositório, execute `npm install` e `npx json-ser
 Todas as requisições de POST para esta API devem conter o header `Content-Type: application/json`.
 Esta API contém as seguintes rotas:
 
-* `GET /tools` : lista as ferramentas cadastradas
-* `POST /tools` : cria uma nova ferramenta
-* `DELETE /tools/:id` : apaga a ferramenta com ID :id
+* `GET /devs` : lista as ferramentas cadastradas
+* `POST /devs` : cria uma nova ferramenta
+* `DELETE /devs/:id` : apaga a ferramenta com ID :id
 
-Para filtrar as ferramentas em `GET /tools`, é possível:
+Para filtrar as ferramentas em `GET /devs`, é possível:
 * fazer uma busca global utilizando a query string `?q=:busca`;
-* fazer uma busca por tags individuais utilizando a query string `?tags_like=:busca`.
 
 ## Exemplos
 
-### GET /tools
+### GET /devs
 
 Requisição: 
 ```javascript
@@ -30,119 +29,46 @@ Resposta:
 ```javascript
 [
     {
-        id: 1,
-        title: "Notion",
-        link: "https://notion.so",
-        description: "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
-        tags: [
-            "organization",
-            "planning",
-            "collaboration",
-            "writing",
-            "calendar"
-        ]
-    },
-    {
-        id: 2,
-        title: "json-server",
-        link: "https://github.com/typicode/json-server",
-        description: "Fake REST API based on a json schema. Useful for mocking and creating APIs for front-end devs to consume in coding challenges.",
-        tags: [
-            "api",
-            "json",
-            "schema",
-            "node",
-            "github",
-            "rest"
-        ]
-    },
-    {
-        id: 3,
-        title: "fastify",
-        link: "https://www.fastify.io/",
-        description: "Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.",
-        tags: [
-            "web",
-            "framework",
-            "node",
-            "http2",
-            "https",
-            "localhost"
-        ]
+        "id": 1,
+        "avatar": "https://avatars.githubusercontent.com/u/57410900?v=4",
+        "name": "Bruno de Sá",
+        "email": "brunoviniciussouza.sa@gmail.com",
+        "city": "Joinville - SC",
+        "education": "Desenvolvedor Web",
+        "technologies": "React, Angular, Python, CSS, HTML",
+        "ghuser": "https://github.com/brunovdsa"
     }
 ]
 ```
 
-### GET /tools?q=:busca
+### GET /devs?q=:busca
 
 Requisição: 
 ```javascript
-GET /tools?q=notion
+GET /devs?q=Bruno
 ```
 Resposta:
 ```javascript
 [
     {
-        id: 1,
-        title: "Notion",
-        link: "https://notion.so",
-        description: "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
-        tags: [
-            "organization",
-            "planning",
-            "collaboration",
-            "writing",
-            "calendar"
-        ]
+        "id": 1,
+        "avatar": "https://avatars.githubusercontent.com/u/57410900?v=4",
+        "name": "Bruno de Sá",
+        "email": "brunoviniciussouza.sa@gmail.com",
+        "city": "Joinville - SC",
+        "education": "Desenvolvedor Web",
+        "technologies": "React, Angular, Python, CSS, HTML",
+        "ghuser": "https://github.com/brunovdsa"
     }
 ]
 ```
 
-### GET /tools?tags_like=:busca
 
-Requisição: 
-```javascript
-GET /tools?tags_like=node
-```
-Resposta:
-```javascript
-[
-    {
-        id: 2,
-        title: "json-server",
-        link: "https://github.com/typicode/json-server",
-        description: "Fake REST API based on a json schema. Useful for mocking and creating APIs for front-end devs to consume in coding challenges.",
-        tags: [
-            "api",
-            "json",
-            "schema",
-            "node",
-            "github",
-            "rest"
-        ]
-    },
-    {
-        id: 3,
-        title: "fastify",
-        link: "https://www.fastify.io/",
-        description: "Extremely fast and simple, low-overhead web framework for NodeJS. Supports HTTP2.",
-        tags: [
-            "web",
-            "framework",
-            "node",
-            "http2",
-            "https",
-            "localhost"
-        ]
-    }
-]
-```
-
-### POST /tools
+### POST /devs
 
 Requisição:
 ```javascript
-// POST /tools
+// POST /devs
 // Content-Type: application/json
 {
     "title": "hotel",
@@ -163,10 +89,10 @@ Resposta:
 }
 ```
 
-### DELETE /tools/:id
+### DELETE /devs/:id
 Requisição:
 ```javascript
-DELETE /tools/5
+DELETE /devs/5
 ```
 
 Resposta:
