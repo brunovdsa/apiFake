@@ -1,0 +1,14 @@
+{
+  "devs": [
+    {
+      "id": 1,
+      "avatar": "https://avatars.githubusercontent.com/u/57410900?v=4",
+      "name": "Bruno de Sá",
+      "email": "brunoviniciussouza.sa@gmail.com",
+      "city": "Joinville - SC",
+      "education": "Desenvolvedor Web",
+      "technologies": "React, Angular, Python, CSS, HTML",
+      "ghuser": "https://github.com/brunovdsa"
+    }
+  ]
+}
