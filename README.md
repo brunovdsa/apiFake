@@ -23,7 +23,7 @@ Para filtrar as ferramentas em `GET /devs`, é possível:
 
 Requisição: 
 ```javascript
-GET /tools
+GET /devs
 ```
 Resposta:
 ```javascript
